@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+  <h1>Barquette</h1>
+  
+    <button class="btn btn-outline-primary" onclick="rtn()">Retour</button>
+
+    <br></br>
+    
+    {% for barquette in barquettes %}
+    <button type="button" class="btn btn-primary btn-lg"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><a 
+    class="nav-link" href="/panier/add/{{ barquette.id }}">{{ barquette.title }}</a></font></font></button>
+    {% endfor %}
+
+
+<!--
+    <button type="button" class="btn btn-primary btn-lg" data-id="0062" data-name="Barquette Frite" data-price="1,90"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><a class="nav-link" href="">Barquette Frite</a></font></font></button>
+
+    <button type="button" class="btn btn-primary btn-lg" data-id="0063" data-name="Barquette Viande" data-price="5,90"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><a class="nav-link" href="">Barquette Viande</a></font></font></button>
+
+    <button type="button" class="btn btn-primary btn-lg" data-id="0064" data-name="Crudité" data-price="2,90"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><a class="nav-link" href="">Crudités</a></font></font></button>
+
+    <button type="button" class="btn btn-primary btn-lg" data-id="0065" data-name="Barquette Sauce" data-price="2,00"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><a class="nav-link" href="">Barquette Sauce</a></font></font></button>
+
+    <button type="button" class="btn btn-primary btn-lg" data-id="0066" data-name="Pot Sauce" data-price="0,20"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><a class="nav-link" href="">Pot Sauce</a></font></font></button>
+!-->
+
+    <script>
+      function rtn() {
+       window.history.back();
+      }
+    </script>
+{% endblock %}    

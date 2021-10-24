@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+  <button class="btn btn-outline-primary" onclick="rtn()">Retour</button>
+
+  <h1>Nos Sandwich</h1>
+
+  <br></br>
+
+    {% for sandwich in sandwichs %}
+      <button type="button" class="btn btn-primary btn-lg"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> <a class="nav-link" href="/panier/add/{{ sandwich.id }}">{{ sandwich.title }}</a></font></font></button>
+    {% endfor %}
+
+     
+ <script>
+   function rtn() {
+     window.history.back();
+   }; 
+  </script>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+  <h1>Entrée</h1>
+
+      <button class="btn btn-outline-primary" onclick="rtn()">Retour</button>
+
+  <br></br>
+
+  {% for entree in entrees %}
+      <button type="button" class="btn btn-primary btn-lg"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><a 
+      class="nav-link" href="/panier/add/{{ entree.id }}">{{ entree.title }}</a></font></font></button>
+  {% endfor %}
+
+<!--
+      <button type="button" class="btn btn-primary btn-lg"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><a class="nav-link" href="{{path('panier_add', {id: 'entree.id' }) }}">5 Wings</a></font></font></button>
+!-->
+
+<script>
+  function rtn() {
+     window.history.back();
+   }
+ </script>
+{% endblock %}    

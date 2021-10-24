@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <button class="btn btn-outline-primary" onclick="rtn()">Retour</button>
+   
+    <br></br>
+            <body id="myDiv">    
+                <div>
+                    <h1>Calculatrice</h1>
+                    <div id="calculator">
+                        <div id="header">
+                    </div>
+                    
+                    <div id="body">
+                        
+                        <h3 id="result">0</h3>
+                        <button class="btn1" id="7">7</button>
+                        <button class="btn1" id="8">8</button>
+                        <button class="btn1" id="9">9</button>
+                        <button class="btn1" id="/">/</button>
+                        <button class="btn1" id="4">4</button>
+                        <button class="btn1" id="5">5</button>
+                        <button class="btn1" id="6">6</button>
+                        <button class="btn1" id="*">*</button>
+                        <button class="btn1" id="1">1</button>
+                        <button class="btn1" id="2">2</button>
+                        <button class="btn1" id="3">3</button>
+                        <button class="btn1" id="-">-</button>
+                        <button class="btn1"  id="equal">=</button>
+                        <button class="btn1" id="0">0</button>
+                        <button class="btn1" id=".">.</button>
+                        <button class="btn1" id="+">+</button>
+                        <button class="btn1" id="clear">A C</button> 
+                        <button class="btn1" id="%">%</button>
+                    </div> 
+                </div> 
+                   <script>
+                        const buttons = document.querySelectorAll(".btn1");
+                        const result = document.getElementById("result");
+
+                        buttons.forEach((button) => {
+                            button.addEventListener("click", (e) => {
+                            result.textContent += e.target.id;
+                                });
+                            });
+                     //La methode EVAL qui permet de calculer       
+                        equal.addEventListener("click", () => {
+                            result.textContent = eval(result.textContent);
+                            });
+                    // l'évenements clear permet de remettre à O            
+                        clear.addEventListener("click", () => {
+                            result.textContent = "";
+                            });
+                    </script>  
+                    <script>
+                    function rtn()
+                     {
+                        window.history.back();
+                    }
+                    </script>
+            </body> 
+{% endblock %}    

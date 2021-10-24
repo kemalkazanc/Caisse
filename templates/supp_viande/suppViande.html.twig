@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+  <h1>Supplément Viande</h1>
+
+   <button class="btn btn-outline-primary" onclick="rtn()">Retour</button>
+
+  <br></br>
+    
+    {% for suppViande in suppViandes %}
+        <button type="button" class="btn btn-primary btn-lg"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><a class="nav-link" href="/panier/add/{{ supp_viande.id }}">{{ supp_viande.title }}</a></font></font></button>
+    {% endfor %}
+
+
+<script>
+  function rtn() {
+    window.history.back();
+  }
+</script>
+
+{% endblock %}    

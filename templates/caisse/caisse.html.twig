@@ -1,0 +1,84 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+        <a href="{{ path("admin_product_ajout") }}" class="btn blue">Ajouter une catégorie</a>
+        {#<a href="{{ path("security_logout") }}" class="btn blue">Déconnexion</a> #}
+   <table>
+        <tbody>
+                                  
+            <tr>
+                <th><button type="button" class="btn2 btn-primary btn-lg"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><a class="nav-link" href="{{ path('plus') }}">Plus</a></font></font></button></th>
+                <th><button type="button" class="btn2 btn-primary btn-lg"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><a class="nav-link" href="{{ path('moins') }}">Moins</a></font></font></button></th>
+                <th> <button type="button" class="btn2 btn-primary btn-lg"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><a class="nav-link" href="{{ path('suppViande') }}">Sup Viande</a></font></font></button></th>
+                <th><button type="button" class="btn2 btn-primary btn-lg"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><a class="nav-link" href="{{ path('suppSauce') }}">Sup Sauce</a></font></font></button></th>
+            </tr>
+            <tr>
+                <th><button type="button" class="btn2 btn-primary btn-lg"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><a class="nav-link" href="{{ path('entree') }}">Entrée</a></font></font></button></th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th><button type="button" class="btn2 btn-primary btn-lg"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><a class="nav-link" href="{{ path('sandwich') }}">Sandwich</a></font></font></button></th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th><button type="button" class="btn2 btn-primary btn-lg"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><a class="nav-link" href="{{ path('plat') }}">Plat</a></font></font></button></th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th><button type="button" class="btn2 btn-primary btn-lg"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><a class="nav-link" href="{{ path('menu') }}">Menu</a></font></font></button></th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th><button type="button" class="btn2 btn-primary btn-lg"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><a class="nav-link" href="{{ path('dessert') }}">Dessert</a></font></font></button></th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th><button type="button" class="btn2 btn-primary btn-lg"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><a class="nav-link" href="{{ path('salade') }}">Salade</a></font></font></button></th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th><button type="button" class="btn2 btn-primary btn-lg"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><a class="nav-link" href="{{ path('boisson') }}">Boissons</a></font></font></button></th>
+                <td></td>
+                <td></td>
+                <td><button type="button" class="btn2 btn-primary btn-lg"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><a class="nav-link" href="">Message</a></font></font></button></td>
+            </tr>
+            <tr>
+                <th><button type="button" class="btn2 btn-primary btn-lg"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><a class="nav-link" href="boissonChaude">Thé Café</a></font></font></button></th>
+                <td></td>
+                <td></td>
+                <td><button type="button" class="btn2 btn-primary btn-lg"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><a class="nav-link" href="{{ path('calculatrice') }}">Calculatrice</a></font></font></button></td>
+            </tr>
+            <tr>
+                <th><button type="button" class="btn2 btn-primary btn-lg"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><a class="nav-link" href="{{ path('alcool') }}">Alcool</a></font></font></button></th>
+                <td></td>
+                <td></td>
+                <td><button type="button" class="btn2 btn-primary btn-lg"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><a class="nav-link" href="">Supprimer</a></font></font></button></td>
+            </tr>
+            <tr>
+                <th><button type="button" class="btn2 btn-primary btn-lg"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><a class="nav-link" href="{{ path('barquette') }}">Barquette</a></font></font></button></th>
+                <td></td>
+                <td></td>
+                <td><button type="button" class="btn2 btn-primary btn-lg"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><a class="nav-link" href="{{ path('panier') }}">Encaisser</a></font></font></button></td>
+            </tr>
+    <tbody>
+   </table>
+   <br>
+
+{% endblock %}

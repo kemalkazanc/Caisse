@@ -1,0 +1,77 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gérer les produits
+{% endblock %}
+
+{% block body %}
+	<h1>Gérer les produits</h1>
+	<table class="table striped">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Titre</th>
+				<th>Prix</th>
+				<th>Active</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for annonce in annonces %}
+				<tr>
+					<td>{{annonce.id}}</td>
+					<td>{{annonce.title}}</td>
+						<label class="form-switch mt-2">
+							<input type="checkbox" {{ (annonce.active) ? 'checked' : ''}} data-id="{{annonce.id}}">
+							<span class="slider"></span>
+						</label>
+					</td>
+					<td class="text-center">
+						<a href="#" class="btn primary press modal-trigger" data-target="modal-delete" data-id="{{annonce.id}}" data-titre="{{annonce.title}}">Supprimer</a>
+					</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+{# On creer un pop-up d'avertissement #}
+	<div class="modal white falling" id="modal-delete">
+		<div class="modal-header">Supprimer le produit</div>
+		<div class="divider"></div>
+		<div class="modal-content">
+		</div>
+		<div class="divider"></div>
+		<div class="modal-footer">
+			<a href="" class="btn red">Valider</a>
+			<button data-target="modal-delete" class="ml-auto btn small primary modal-trigger">Fermer</button>
+		</div>
+	</div>
+{% endblock %}
+
+
+{% block javascripts %}
+	<script>
+		window.onload = () => {
+			//On donne une action au boutton pour le supprimer
+			let modal = new Modal('#modal-delete');
+			let activer = document.querySelectorAll("[type=checkbox]")
+			for (let bouton of activer) {
+				bouton.addEventListener("click", function () {
+					//On va chercher l id l'annonce
+					let xmlhttp = new XMLHttpRequest;
+					//On va chercher l'id du boutton qu'on à cliquer
+					xmlhttp.open("get", `/admin/annonces/activer/${this.dataset.id}`)
+					xmlhttp.send()
+				})
+			}
+			//On rajoute un écouteur d'évènement 
+			let supprimer = document.querySelectorAll(".modal-trigger")
+			for(let bouton of supprimer){
+				bouton.addEventListener("click", function () {
+					document.querySelector(".modal-footer a").href = `/admin/annonces/supprimer/${this.dataset.id}`
+					document.querySelector(".modal-content").innerText = `Êtes-vous sûr(e) de vouloir supprimer le produit "${this.dataset.titre}"`
+				})
+	
+			}
+		}
+	</script>
+{% endblock %}

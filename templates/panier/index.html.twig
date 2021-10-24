@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Commande{% endblock %}
+
+{% block body %}
+<h1>Commande</h1>
+
+<button type="button" class="btn2 btn-primary btn-lg"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><a 
+class="nav-link" href="{{ path('caisse') }}">Retour</a></font></font></button>
+
+<br>
+<br>
+
+{% if items | length > 0 %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Produit</th>
+                <th>Prix</th>
+                <th>Quantité</th>
+                <th>Total</th>
+                <th></th>
+            </tr>    
+        </thead>
+        <tbody>
+            {% for item in items %}
+                <tr>
+                    <td>{{ item.product.title }}</td>
+                    <td>{{ item.product.price }}€</td>
+                    <td>{{ item.quantity }}</td>
+                    <td>{{ item.product.price * item.quantity }}€</td>
+                    <td class="text-center">
+                        <a href="{{path('panier_add', {'id': item.product.id}) }}" class="btn btn-success">Ajouter<i class="bi bi-cart-plus"></i>
+
+                        <a href="{{path('panier_delete', {'id': item.product.id}) }}" class="btn btn-warning"><i class="bi bi-cart-dash">Modifier -1</i></a>
+                        
+                        <a href="{{ path('panier_remove', {'id': item.product.id}) }}" class="btn btn-danger btn-sm"><i class="fas fa-trash">Supprimer</i></a>
+
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+                <tr>
+                    <td colspan="3">Total:</td>
+                    <td>  €</td>
+                    <td></td>
+                </tr>
+    </table>
+{% else %}
+    <p>Le panier est vide</p>
+{% endif %}
+{% endblock %}
